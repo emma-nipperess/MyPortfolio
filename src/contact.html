@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Contact </title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+  </head>
+  
+  <body>
+    <div id = "nav-container"></div>
+    <h1>
+        Contact Me
+    </h1>
+    <div class="container_block">
+        <div id="info">
+            <h3> Get in contact with me </h3>
+            <p>
+                <b>Emma Nipperess:</b> emmanipperess@gmail.com
+                <br>
+                <b> Phone: </b> +61 474 479 467
+                <br>
+                <!--<b> Web: </b> www.aceacdemy.com.au -->
+            </p>
+
+          <form id="contact-form" action="https://formspree.io/f/xleydkaz" method="POST" onsubmit='showMessageSent(event)'>
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required>
+              <br>
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required>
+              <br>
+              <label for="phone">Phone:</label>
+              <input type="tel" id="phone" name="phone" required>
+              <br>
+              <label for="message">Message:</label>
+              <textarea id="message" name="message" required></textarea>
+              <br>
+              <button type="submit">Submit</button>
+            </form>
+                  
+            </div>
+        <div id="map">
+            <h3> Gold Coast </h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d225555.7787316336!2d153.20455436165977!3d-27.953820165654502!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b911a472b5d60b7%3A0x302a35af3deaf70!2sGold%20Coast%20QLD!5e0!3m2!1sen!2sau!4v1690257409830!5m2!1sen!2sau" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <!-- link to map right here tk-->
+        </div>
+        <div id="confirmationModal" class="modal">
+            <div class="modal-content">
+              <h2>Confirmation</h2>
+              <p id="modalContent"></p>
+              <button type="button" onclick="closeModal()">Close</button>
+            </div>
+          </div>
+    </div>
+    <script src="script.js"></script>
+  <script> loadNav() </script>
+  </body>
+</html>

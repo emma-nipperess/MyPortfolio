@@ -1,0 +1,518 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@600&family=Open+Sans:wght@300&display=swap');
+
+body {
+    margin: 0;
+    margin-left: 2%;
+    font-family: 'Open Sans', sans-serif;
+    height:100vh;
+}
+
+body > p {
+    margin-left: 5%;
+}
+
+body h1 {
+    text-align: left;
+    font-size: 50px;
+    font-family: 'Fredoka', sans-serif;
+    color: #414BB2;
+    padding: 50px 10px 0px 10px;
+    margin-left: 30px;
+    margin-top: 50px;
+}
+
+h2 {
+    padding-left: 3%;
+}
+
+input {
+    border: 1px solid #ccc;
+    height: 40px;
+    font-family:  'Open Sans', sans-serif;
+}
+
+label {
+    font-family:  'Open Sans', sans-serif;
+}
+
+/* Styling for the ACE ACADEMY log on the nav Bar */
+#logo {
+    font-family: 'Fredoka', sans-serif;
+    color: #414BB2;
+    font-size: 20px;
+    font-variant-caps: normal;
+    
+}
+
+/* styling for the goolge maps iframe on contact page */
+iframe {
+    margin-left: 5%;
+}
+
+button {
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    background-color: #414BB2;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 10px;
+}
+
+button:hover {
+    background-color: #2733b8;
+}
+
+
+/* defines a container that is used as default container
+    to display items next to each other */
+.container_block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+.circular {
+    width: 70%;
+    border-radius: 50%;
+}
+/* defines that each element within the container block */
+.container_block > * {
+    flex: 1;
+    padding: 15px 30px 15px 30px;
+    align-items: center;
+    text-align: center;
+}
+
+/* ------------------- Awards Page ---------------------- */
+
+.container_block.awards_list {
+    flex-direction: column;
+}
+
+.award {
+    border-bottom: 1px solid rgba(219, 219, 219, 0.658);
+    margin-right: 15px;
+    padding: 10px 30px 40px 30px;
+}
+
+.award div:first-of-type {
+    flex: 0.6;
+} 
+
+.award img {
+    width: 100%;
+    min-width: 55px;
+    max-width: 110px;
+}
+
+.award div:nth-of-type(2) {
+    flex: 4;
+    font-size: 1.5em;
+    font-weight: 1000;
+    text-align: center;
+}
+
+
+.award .description {
+    display: inline;
+    position: absolute;
+    padding: 8px;
+    top: -5px;
+    width: 100%;
+    left: 50%; /* Center the description horizontally */
+    transform: translateX(-50%); /* Adjust to center the description accurately */
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0s 0.3s;
+  }
+  
+
+.award div:hover .description {
+    opacity: 1;
+    visibility: visible; /* Show the description on hover */
+    transition-delay: 0s; /* Remove the visibility transition delay */
+}
+
+.award div {
+    position: relative;
+    z-index: 1;
+}
+
+.award div p {
+    font-size: 0.6em;
+}
+
+.journey div:nth-of-type(2) {
+    text-align: left;
+}
+
+#arrow {
+    height: 100%;
+    width: 4px;
+    left: 10px;
+    position: absolute;
+    background-color: black;
+}
+#arrow p {
+    font-size: 60px;
+    margin-left: -14px;
+    margin-top: -30px;
+}
+/*-------------------- skills ------------------ */
+.skills_list {
+    flex-wrap: wrap; /* This will wrap the divs to the next line when there's not enough space */
+    gap: 10px; /* Add some space between the divs */
+    align-items: center;
+    align-content: center;
+}
+
+.skills_list div {
+    flex: 0 0 calc(15% - 10px);  
+    
+}
+
+.skills_list img {
+    width: 20%;
+    min-width: 100px;
+}
+
+
+/*--------Modal styles -------------------------------*/
+/* styles the backgroud to error/confirmation */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(29, 28, 28, 0.5);
+    }
+/* styling of error/confirmation popup */
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    left: 25%;
+    top: 25%;
+    align-items: center;
+    background-color: #fff;
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10%;
+    border: 3px solid #414BB2;
+}
+
+#modalContent {
+    margin-left: 0px;
+}
+/*--------------------NAV BAR--------------------------------------------*/
+
+/* styling of navigation menu at the top */
+#nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    transition: top 0.3s;
+    width: 100%;
+    height: 75px;
+    position:fixed;
+    align-content: stretch;
+    background-color: #fff;
+    z-index: 999;
+
+}
+
+/* style for container holding nav menu */
+#nav-container {
+    display: block;
+    height: 50px;
+    margin-left: -2%;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 999;
+}
+
+/* styles an individual page defined within navigation menu */
+.page {
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.page a{
+    display: inline-block;
+    text-align:center;
+    width: 100%;
+    color: rgb(0, 0, 0);
+    font-family:  'Open Sans', sans-serif;
+    text-decoration: none;
+    font-size: 20px; 
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.page a:hover {
+    background-color: rgb(232, 229, 229);
+}
+
+/* style for the dropdown pages for subjects and team*/
+.dropdown_content {
+    display: none;
+    position: absolute;
+    width: 14.28%;
+}
+.dropdown_content .page {
+    height: 80px;
+}
+
+.has_dropdown:hover .dropdown_content {
+    display: block;
+    background-color: rgb(250, 248, 248);
+
+}
+
+.has_dropdown:hover {
+    background-color: rgb(250, 248, 248);
+}
+
+
+.dropdown_content a {
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    width: 100%;
+}
+
+
+.has_dropdown:hover .dropdown_content {
+    display: block; 
+
+}
+
+
+/*----- Projects ------------*/
+
+.project_list * {
+    flex: 0 0 calc(15% - 1em); 
+    margin-bottom: 1em;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 400px;
+}
+
+.container_block.project_list {
+display: flex;
+align-items: center;
+justify-content: space-around;
+}
+
+
+/* Styling for the selected option */
+.project_list *:hover,
+.option-row .option-container label:hover,
+.option-row .option-container input:checked + label {
+background-color:#414BB2;
+color: white;
+}
+
+
+
+/*----------------------------------------------------*/
+
+
+
+#open-nav {
+    display: none;
+}
+
+
+#openNav {
+    display: none;
+    float: right;
+    padding: 15px;
+    color: white;
+    font-weight:bolder;
+}
+
+
+
+
+/*------------------Contact----------------------------*/
+
+
+#contact-form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#contact-form input, label, textarea {
+    width: 45%;
+}
+
+#contact-form button {
+    width: 40%;
+    margin: auto;
+    margin-top: 30px;
+}
+
+/*-----------------Journey-----------------------------------*/
+
+/*----------------------------------------------------*/
+
+@media only screen and (min-width: 731px) {
+
+    /* makes the nav regain its shape and height when browser goes from small to large*/
+    #nav {
+        display: flex !important;
+        height: 75px !important;
+    }
+
+    .has_dropdown:hover .dropdown_content {
+        display: flex !important;
+        
+    }
+
+    .dropdown_content {
+        position:  absolute !important;
+        width: 14.28% !important;
+        display: none !important;
+        flex-direction: column !important;
+        top: 60px !important;
+        background-color: rgb(250, 248, 248) !important;
+        height: auto !important;
+    }
+
+
+    .page a {
+        align-items: center !important;
+        justify-content: center !important;
+        position: relative !important;
+        height: 60px !important;
+    }
+}
+
+
+@media only screen and (max-width: 730px) {
+    @keyframes movingWords {
+        0%   {color: pink;}
+        20%  {color: red;}
+        40%  {color: yellow;}
+        60%  {color: green;}
+        80%  {color: blue;}
+        100% {color: #414BB2;}
+        from {margin-left: 0px;}
+        to {margin-left: 45%;}
+    }
+    /* changing flex-direction and display to collapse navigation */
+    #nav {
+        display: none;
+        flex-direction: column; 
+        background-color: #414BB2;    
+        height: 95%; 
+        align-content: stretch;
+        justify-content: flex-start;
+        margin-top: 50px; 
+    }
+
+    /*displays the button to open Navigation */
+    #openNav {
+        display: block;      
+    }
+
+    .page {
+        height: 12%; 
+    }
+    
+    #nav *{
+        color: white;
+    }
+
+    .page a:hover {
+        background-color: #2733b8;
+        
+    }
+
+    #nav-container {
+        display: block;
+        background-color: #414BB2;      
+    }
+    
+    /*doesnt display subject or team dropdown pages */
+    .dropdown_content {
+        display: none;
+        width: 0%;
+        z-index: 999;
+        transition: width 2s;
+    }
+    /*doesnt reveal subject or team dropdown pages on hover either. 
+        has to be clicked*/
+    .has_dropdown:hover .dropdown_content {
+        display: none;
+    }
+
+    /*adjust color to new format of nav bar */
+    .has_dropdown:hover {
+        background-color:#414BB2;
+        
+    }
+
+    /* defines the X button when viewing subpages in navigation */
+    #goBackToMainNavMenu {
+        float: right;
+        padding: 10px; 
+        margin: 0px;
+    }
+
+    #book1 .input-row {
+        min-width: 250px;
+    }
+
+    #book1Button {
+        width: 50%;
+    }
+
+    .progress-container {
+        position: relative;
+    }
+
+    /* enlarges the text area of error/confirmation pop-up */
+    .modal-content {
+        left: 15%;
+        top: 15%;
+        width: 70%;
+        height: 70%;
+    }
+
+    .tutor_profile {
+        max-width: 160px;
+    }
+
+    /* adjust the hidden text for tutors to fit the small profiles */
+    .tutor_profile .info {
+        top: 30%;
+        width: 70%;
+        font-size: 10px;
+    }
+    
+}
