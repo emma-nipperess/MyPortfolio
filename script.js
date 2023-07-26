@@ -97,7 +97,7 @@ function showConfirmation(event) {
 
 // create and show confirmation pop-up for contact page form
 function showMessageSent(event) {
-  event.preventDefault(); // Prevent form submission
+  //event.preventDefault(); // Prevent form submission
 
   // Get form inputs
   const name = document.getElementById('name').value;
@@ -118,6 +118,7 @@ function showMessageSent(event) {
   // Display the confirmation modal
   const modal = document.getElementById('confirmationModal');
   modal.style.display = 'block';
+
 }
 
 
