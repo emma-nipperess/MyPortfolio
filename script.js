@@ -192,3 +192,52 @@ function showPopUpErrorMessage(message, errorTitle) {
   document.body.appendChild(modal);
 
 }
+
+// Function to get the image URL based on the name
+function getImageURL(name) {
+  // Convert the name to lowercase to ensure case-insensitivity (optional)
+  const lowercaseName = name.toLowerCase();
+  
+  // Check if the name exists in the image collection
+  if (lowercaseName in imageCollection) {
+    return imageCollection[lowercaseName];
+  } else {
+    // Return a default image URL or handle the case where the name is not found
+    return "default.jpg"; // Replace "default.jpg" with your default image URL
+  }
+}
+
+const imageCollection = {
+  "python": "media/python.png",
+  "java": "media/Java-logo.png",
+  "html": "media/html_logo.png",
+  "css": "media/css_logo.png",
+  "javascript": "media/javascript-logo.png",
+  "excel": "media/excel_logo.png"
+  // Add more image-name pairs as needed
+};
+
+document.addEventListener("DOMContentLoaded", function () {
+  const skillsDivs = document.querySelectorAll(".skills");
+  
+  skillsDivs.forEach((div) => {
+    const collection = div.dataset.collection;
+    console.log(collection);
+    skills = collection.split(',');
+    //const skills = collection ? JSON.parse(collection) : [];
+    
+    for (const skill of skills) {
+      const flexBox = document.createElement("div");
+      flexBox.classList.add("skill-item");
+      const skillName = document.createElement("div");
+      const skillImage = document.createElement("img");
+      skillImage.src = getImageURL(skill);
+      skillName.textContent = skill;
+      flexBox.appendChild(skillName);
+      flexBox.appendChild(skillImage);
+      div.appendChild(flexBox);
+    };
+
+    
+  });
+});
